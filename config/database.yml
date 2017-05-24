@@ -14,12 +14,12 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
+  password: Algeria2017
   host: localhost
 
 development:
   <<: *default
-  database: DNETP_development
+  database: db_DNETP
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

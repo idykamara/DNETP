@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DNETP</title>
+    <title>DNETP - GESTION DU FLUX SCOLAIRE (MALI) </title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   </head>
 
   <body>
-    <%= yield %>
+<div class="navbar navbar-inverse">
+
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<%= root_path %>">DNETP - GESTION DU FLUX SCOLAIRE </a>
+    </div>
+<ul class="nav navbar-nav navbar-right">
+  <li><a href="<%= new_user_path %>">S'inscrire</a></li>
+  <li><a href="">Se connecter</a></li>
+  </ul>
+</div>
+  </div>
+</div>
+<div class="container">
+  <% if flash[:succss] %>
+      <div class="alert alert-success">
+
+        <%= flash[:succss] %>
+
+      </div>
+  <% end %>
+  <% if flash[:danger] %>
+      <div class="alert alert-danger">
+
+        <%= flash[:danger] %>
+
+      </div>
+  <% end %>
+
+  <%= yield %>
+</div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
